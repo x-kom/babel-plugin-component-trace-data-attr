@@ -22,9 +22,13 @@ Resulting HTML markup will look like this:
 where components names are separated by `/`
 
 ## Options:
+- **`attribute`** - any attribute name you want, should begin from `data-`. Default: `data-component-trace`.
+- **`format`** - can be "camel" (camelCase), "snake" (snake_case) or "kebab" (kebab-case). Default: `kebab`.
+
+Example:
 ```json
   ["react-component-trace-data-attr", {
-    "attribute": "data-component-trace", // you can specify any attribute you want
-    "format": "kebab" // can be: "camel" (camelCase), "snake" (snake_case) or "kebab" (kebab-case).
+    "attribute": "data-component-trace",
+    "format": "kebab"
   }]
 ```
