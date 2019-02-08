@@ -16,19 +16,21 @@ render(<Component />);
 
 Resulting HTML markup will look like this:
 ```html
-<h1 data-component-trace="/component/second-component/header-of-component"></h1>
-<div data-component-trace="/component/second-component/content-of-component"></div>
+<h1 data-component-trace=" component second-component header-of-component"></h1>
+<div data-component-trace=" component second-component content-of-component"></div>
 ```
-where components names are separated by `/`
+where components names are separated by a single space
 
 ## Options:
 - **`attribute`** - any attribute name you want, should begin from `data-`. Default: `data-component-trace`.
 - **`format`** - can be "camel" (camelCase), "snake" (snake_case) or "kebab" (kebab-case). Default: `kebab`.
+- **`separator`** - can by any non-empty string. Default: ` ` (single space, useful for selectors like `[data-component-trace~=second-component]`).
 
 Example:
 ```json
   ["react-component-trace-data-attr", {
     "attribute": "data-component-trace",
-    "format": "kebab"
+    "format": "kebab",
+    "separator": " ",
   }]
 ```

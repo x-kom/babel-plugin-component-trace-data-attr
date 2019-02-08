@@ -18,6 +18,7 @@ const validTranform = opt => {
 const checkValidOptions = state => {
   let attribute = 'data-component-trace'
   let format = 'kebab'
+  let separator = ' '
 
   if (isValidOption(state.opts.attribute)) {
     attribute = state.opts.attribute
@@ -27,9 +28,14 @@ const checkValidOptions = state => {
     format = state.opts.format
   }
 
+  if (isValidOption(state.opts.separator)) {
+    separator = state.opts.separator
+  }
+
   return {
     format: langTransforms[format],
-    attribute: attribute
+    attribute: attribute,
+    separator: separator
   }
 }
 

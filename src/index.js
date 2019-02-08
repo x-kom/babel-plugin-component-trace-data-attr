@@ -58,7 +58,7 @@ const handleOpeningElement = (t, path, options) => {
         parentDataAttrExpression
           ? t.logicalExpression("||", parentDataAttrExpression, t.stringLiteral(""))
           : t.stringLiteral(""),
-        t.stringLiteral("/" + options.format(componentName))
+        t.stringLiteral(options.separator + options.format(componentName))
       )
     )
   ));
