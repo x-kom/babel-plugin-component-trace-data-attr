@@ -13,8 +13,8 @@
     "clean": "rm -rf lib",
     "build": "babel src -d lib",
     "test": "mocha --compilers js:babel-register",
-    "test:watch": "test -- --watch",
-    "prepublishOnly": "clean && build"
+    "test:watch": "npm test -- --watch",
+    "prepublishOnly": "npm run clean && npm run build"
   },
   "dependencies": {
     "lodash.camelcase": "^4.3.0",
