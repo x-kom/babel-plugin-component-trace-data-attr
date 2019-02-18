@@ -3,6 +3,8 @@ Adds `data-component-trace` attribute to html elements showing the trace of Reac
 
 > Note: it will only work with JSX elements, not with `React.createElement`. If you're using TypeScript and transpile it separately, use `"jsx": "preserve"` in your `tsconfig.json` and add `preset-react` to your babel presets.
 
+Useful when combined with [component-trace-element-finder](https://www.npmjs.com/package/component-trace-element-finder)
+
 ## Example
 Considering components structure:
 ```jsx
