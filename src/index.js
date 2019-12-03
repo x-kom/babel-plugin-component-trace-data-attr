@@ -21,6 +21,8 @@ const handleOpeningElement = (t, path, options) => {
   let componentName;
   let parentDataAttrExpression;
 
+  if (!functionParent) return;
+
   if (functionParent.type == "ClassMethod" || functionParent.parent.type == "ClassProperty") {
     componentName = functionParent.findParent((path) => path.isClassExpression() || path.isClassDeclaration()).node.id.name;
     parentDataAttrExpression = t.memberExpression(
