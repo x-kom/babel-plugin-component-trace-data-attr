@@ -2,11 +2,13 @@ import checkValidOptions from './options'
 
 const findOrAddDataProperty = (t, properties, identifier, attribute) => {
   for (const prop of properties) {
-    if (prop.key.type === 'StringLiteral' && prop.key.value === attribute) {
+    if (prop.key && prop.key.type === 'StringLiteral' && prop.key.value === attribute) {
       return prop.value;
     }
   }
-  properties.push(t.objectProperty(
+
+  // It's better to unshift instead of push, because last property may be a RestElement (...restProps).
+  properties.unshift(t.objectProperty(
     t.stringLiteral(attribute),
     identifier,
     true,
